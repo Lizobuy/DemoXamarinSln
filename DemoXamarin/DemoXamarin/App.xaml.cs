@@ -10,8 +10,9 @@ namespace DemoXamarin
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+          
         }
+             
 
         protected override void OnStart()
         {

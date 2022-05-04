@@ -14,6 +14,16 @@ namespace DemoXamarin
         public MainPage()
         {
             InitializeComponent();
+
+            CoolSider.ValueChanged += OnSliderValueChanged;
+        }
+
+        private void OnSliderValueChanged(object sender, ValueChangedEventArgs e)
+
+        {
+            ClickCountLabel.Text = e.NewValue.ToString();
+
+            ClickCountLabel.Rotation = e.NewValue;
         }
 
         private void Button_Clicked(object sender, EventArgs e)
@@ -22,6 +32,11 @@ namespace DemoXamarin
             _numberClicked++;
 
             ClickCountLabel.Text = _numberClicked.ToString();
+        }
+
+        private void Xappiness_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new XappinessPage());
         }
     }
 }
